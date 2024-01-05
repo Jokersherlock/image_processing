@@ -1,0 +1,531 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Thu Jan  4 20:47:14 2024
+| Host         : sherlock running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file image_processing_control_sets_placed.rpt
+| Design       : image_processing
+| Device       : xc7z020
+---------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   453 |
+|    Minimum number of control sets                        |   453 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    27 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   453 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     2 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |   448 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               0 |            0 |
+| No           | No                    | Yes                    |              79 |           41 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |             230 |          133 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------------+---------------------------------------------------+----------------------------------------------+------------------+----------------+--------------+
+|    Clock Signal    |                   Enable Signal                   |               Set/Reset Signal               | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------------+---------------------------------------------------+----------------------------------------------+------------------+----------------+--------------+
+|  sys_clk_IBUF_BUFG |                                                   | u_lcd_display/u_conv/u_rom_control/sys_rst_n |                1 |              3 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/row[6]_i_1_n_0 | u_lcd_display/u_conv/u_rom_control/sys_rst_n |                2 |              7 |         3.50 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/column0        | u_lcd_display/u_conv/u_rom_control/sys_rst_n |                4 |              8 |         2.00 |
+|  sys_clk_IBUF_BUFG | u_rd_id/rd_flag_i_1_n_0                           | u_lcd_display/u_conv/u_rom_control/sys_rst_n |                3 |             11 |         3.67 |
+|  lcd_clk_OBUF_BUFG | u_lcd_driver/sel                                  | u_lcd_display/u_conv/u_rom_control/sys_rst_n |                4 |             11 |         2.75 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_118     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_54      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_125     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_139     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_1       |                                              |                7 |             24 |         3.43 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_100     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_122     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_145     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_12      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_113     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_127     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_14      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_146     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_149     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_114     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_13      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_150     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_129     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_123     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_151     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_0       |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_112     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_117     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_103     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_128     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_137     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_153     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_101     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_104     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_102     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_10      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_107     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_115     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_135     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_142     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_120     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_136     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_148     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_154     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_106     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_119     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_15      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_130     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_124     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_138     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_147     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_152     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_143     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_109     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_155     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_11      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_116     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_105     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_111     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_131     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_212     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_121     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_132     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_108     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_140     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_110     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_134     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_126     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_141     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_144     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_133     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_163     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_157     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_160     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_177     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_189     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_190     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_176     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_164     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_195     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_196     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_165     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_167     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_18      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_199     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_202     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_179     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_162     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_170     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_17      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_171     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_19      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_203     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_166     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_169     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_204     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_205     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_206     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_187     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_20      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_156     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_172     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_173     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_185     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_197     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_186     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_198     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_193     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_175     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_200     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_208     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_159     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_180     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_209     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_210     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_211     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_161     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_168     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_178     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_181     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_192     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_2       |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_201     |                                              |                7 |             24 |         3.43 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_182     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_158     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_16      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_191     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_184     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_207     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_188     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_21      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_183     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_259     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_26      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_261     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_250     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_263     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_228     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_248     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_241     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_229     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_213     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_216     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_217     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_222     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_226     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_221     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_223     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_251     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_254     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_260     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_240     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_243     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_245     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_255     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_262     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_265     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_232     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_235     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_266     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_267     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_268     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_269     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_22      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_242     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_249     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_27      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_214     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_219     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_234     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_215     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_247     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_256     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_252     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_220     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_230     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_264     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_270     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_237     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_253     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_23      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_227     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_233     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_218     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_238     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_231     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_224     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_24      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_225     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_236     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_239     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_244     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_246     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_25      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_257     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_258     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_292     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_293     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_297     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_287     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_296     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_280     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_299     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_3       |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_281     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_272     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_300     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_309     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_312     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_314     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_315     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_316     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_283     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_31      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_307     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_313     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_318     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_271     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_30      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_301     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_319     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_321     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_277     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_289     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_322     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_302     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_323     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_326     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_327     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_29      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_290     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_306     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_288     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_310     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_295     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_291     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_276     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_274     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_286     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_308     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_285     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_324     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_32      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_311     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_325     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_328     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_294     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_273     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_275     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_304     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_320     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_28      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_317     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_279     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_303     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_282     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_305     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_278     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_354     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_339     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_361     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_33      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_343     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_352     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_366     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_371     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_372     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_335     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_330     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_375     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_376     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_377     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_378     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_379     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_380     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_34      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_362     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_382     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_383     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_384     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_355     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_350     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_38      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_356     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_385     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_345     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_368     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_338     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_336     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_360     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_386     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_337     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_346     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_347     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_36      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_344     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_331     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_334     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_342     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_329     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_351     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_363     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_341     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_364     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_365     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_367     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_369     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_333     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_353     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_35      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_357     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_358     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_37      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_370     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_373     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_374     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_381     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_359     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_332     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_349     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_40      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_406     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_409     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_424     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_435     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_436     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_402     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_389     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_395     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_41      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_410     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_412     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_420     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_421     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_431     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_388     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_400     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_39      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_415     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_396     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_416     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_411     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_390     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_414     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_426     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_427     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_417     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_432     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_437     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_438     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_439     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_393     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_43      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_44      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_391     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_397     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_428     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_425     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_433     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_404     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_423     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_440     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_441     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_442     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_443     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_399     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_387     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_394     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_401     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_398     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_407     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_392     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_413     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_429     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_403     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_430     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_405     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_42      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_419     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_434     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_422     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_4       |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_418     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_45      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_49      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_50      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_46      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_51      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_5       |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_48      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_444     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_47      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_408     |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_53      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_57      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_52      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_56      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_55      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_58      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_62      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_65      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_7       |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_71      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_74      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_75      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_76      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_59      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_61      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_63      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_66      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_73      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_77      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_67      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_68      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_78      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_64      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_70      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_72      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_6       |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_60      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_69      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_87      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_99      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_8       |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_83      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_81      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_9       |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_89      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_93      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_97      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_80      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_95      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_96      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_90      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_98      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_82      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_85      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_88      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_91      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_92      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_84      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_86      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_79      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_94      |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in         |                                              |                8 |             24 |         3.00 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_348     |                                              |               10 |             36 |         3.60 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_284     |                                              |               10 |             36 |         3.60 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_174     |                                              |               10 |             36 |         3.60 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_194     |                                              |               10 |             36 |         3.60 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_298     |                                              |               10 |             36 |         3.60 |
+|  lcd_clk_OBUF_BUFG | u_lcd_display/u_conv/u_rom_control/p_0_in_340     |                                              |               10 |             36 |         3.60 |
+|  lcd_clk_OBUF_BUFG |                                                   | u_lcd_display/u_conv/u_rom_control/sys_rst_n |               40 |             76 |         1.90 |
+|  lcd_clk_OBUF_BUFG | u_lcd_driver/pixel_xpos_reg[8]_0                  | u_lcd_display/u_conv/u_rom_control/sys_rst_n |              120 |            193 |         1.61 |
++--------------------+---------------------------------------------------+----------------------------------------------+------------------+----------------+--------------+
+
+
